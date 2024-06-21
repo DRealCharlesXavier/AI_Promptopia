@@ -26,29 +26,29 @@ const CreatePrompt = () => {
         body: JSON.stringify({
           prompt: post.prompt,
           userId: session?.user.id,
-          tag: post.tag
-        })
-      })
+          tag: post.tag,
+        }),
+      });
 
       if (response.ok) {
-        router.push('/');
+        router.push("/");
       }
     } catch (error) {
       console.log(error);
     } finally {
       setSubmitting(false);
     }
-  }
+  };
 
   return (
     <Form
-      type="Create" 
+      type="Create"
       post={post}
       setPost={setPost}
       submitting={submitting}
       handleSubmit={createPrompt}
     />
-  )
+  );
 };
 
 export default CreatePrompt;
